@@ -1,5 +1,6 @@
 import React from "react";
 import { Typography, Card, CardMedia, CardContent } from "@mui/material";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 import "./styles.css";
 import { useParams } from "react-router-dom";
@@ -20,12 +21,14 @@ function UserPhotos() {
       <Typography variant="h4">User Photos</Typography>
       {photos.map((photo) => (
         <Card key={photo._id}>
-          <CardMedia
-            component="img"
-            height="140"
-            image={`/images/${photo.file_name}`}
-            alt="User photo"
-          />
+          <Link to={`/photos/${userId}/${photo._id}`}>
+            <CardMedia
+              component="img"
+              height="140"
+              image={`/images/${photo.file_name}`}
+              alt="User photo"
+            />
+          </Link>
           <CardContent>
             <Typography variant="body1">{photo.date_time}</Typography>
           </CardContent>

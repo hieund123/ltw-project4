@@ -8,6 +8,7 @@ import TopBar from "./components/TopBar";
 import UserDetail from "./components/UserDetail";
 import UserList from "./components/UserList";
 import UserPhotos from "./components/UserPhotos";
+import PhotoDetail from "./components/PhotoDetail";
 
 const App = (props) => {
   return (
@@ -28,6 +29,11 @@ const App = (props) => {
               <Routes>
                 <Route path="/users/:userId" element={<UserDetail />} />
                 <Route path="/photos/:userId" element={<UserPhotos />} />
+                <Route
+                  path="/photos/:userId/:photoId"
+                  element={<PhotoDetail />}
+                />
+
                 <Route path="/users" element={<UserList />} />
               </Routes>
             </Paper>
